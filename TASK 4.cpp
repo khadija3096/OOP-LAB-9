@@ -1,4 +1,5 @@
 #include <iostream>
+#using namespace std;
 #include <string>
 class PaymentMethod {
 public:
@@ -7,12 +8,12 @@ public:
 };
 
 class CreditCard : public PaymentMethod {
-    std::string cardNumber;
+   string cardNumber;
 public:
     CreditCard(const std::string& cardNum) : cardNumber(cardNum) {}
     bool processPayment(double amount) override {
         if (cardNumber.empty()) return false;
-        std::cout << "Payment of " << amount << " processed using Credit Card." << std::endl;
+        std::cout << "Payment of " << amount << " processed using Credit Card." <<endl;
         return true;
     }
 };
@@ -23,7 +24,7 @@ public:
     bool processPayment(double amount) override {
         if (balance < amount) return false;
         balance -=amount;
-        std::cout << "Payment of $" << amount << " processed using Digital Wallet." << std::endl;
+        cout << "Payment of $" << amount << " processed using Digital Wallet." << endl;
         return true;
     }
 };
