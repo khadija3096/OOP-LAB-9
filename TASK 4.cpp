@@ -13,7 +13,7 @@ public:
     CreditCard(const std::string& cardNum) : cardNumber(cardNum) {}
     bool processPayment(double amount) override {
         if (cardNumber.empty()) return false;
-        std::cout << "Payment of " << amount << " processed using Credit Card." <<endl;
+        std::cout << "Payment of " << amount << <<endl;
         return true;
     }
 };
@@ -24,7 +24,7 @@ public:
     bool processPayment(double amount) override {
         if (balance < amount) return false;
         balance -=amount;
-        cout << "Payment of $" << amount << " processed using Digital Wallet." << endl;
+        cout << "Payment of" << amount << " processed using Digital Wallet." << endl;
         return true;
     }
 };
